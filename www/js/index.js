@@ -41,7 +41,10 @@ var app = {
         console.log('calling push init');
         var push = PushNotification.init({
             "android": {
-                "senderID": "708637040066"
+                "senderID": "708637040066",
+				"sound": true,
+                "vibration": true,
+                "badge": true
             },
             "browser": {},
             "ios": {
@@ -78,12 +81,12 @@ var app = {
 
         push.on('notification', function(data) {
             console.log('notification event');
-            navigator.notification.alert(
+            /* navigator.notification.alert(
                 data.message,         // message
                 null,                 // callback
                 data.title,           // title
                 'Ok'                  // buttonName
-            );
+            ); */
        });
     }
 };
